@@ -1,7 +1,6 @@
 class Hero {
     constructor(x,y,width,height) {
         var options = {
-            isStatic:true,
             density:1,
             frictionAir:1
         }
@@ -18,7 +17,10 @@ class Hero {
         var pos = this.body.position;
         
         push();
-        image(this.image,pos.x,pos.y,this.width,this.height);
+        translate(pos.x,pos.y-100);
+        rectMode(CENTER);
+        imageMode(CENTER);
+        image(this.image,0,0,this.width,this.height);
         pop();
     }
 }
